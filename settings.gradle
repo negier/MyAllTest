@@ -1,0 +1,4 @@
+include ':kotlin_grammer'
+include ':plugin'
+include ':app'
+rootProject.name = "MyAllTest"
