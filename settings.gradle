@@ -1,10 +1,16 @@
+rootProject.name = "MyAllTest"
+
 include ':kotlin_grammer'
 include ':plugin'
 include ':app'
-rootProject.name = "MyAllTest"
 include ':view_binding'
 include ':kotlin-android-extensions1deprecated'
+
 include ':jetpack:data_binding'
 include ':jetpack:data_store'
-include ':retrofit'
 include ':jetpack:view_model'
+
+include ':third_part:koin'
+include ':third_part:retrofit'
+
+include ':third_part:moshi'

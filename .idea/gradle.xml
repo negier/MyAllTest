@@ -20,7 +20,10 @@
             <option value="$PROJECT_DIR$/kotlin-android-extensions1deprecated" />
             <option value="$PROJECT_DIR$/kotlin_grammer" />
             <option value="$PROJECT_DIR$/plugin" />
-            <option value="$PROJECT_DIR$/retrofit" />
+            <option value="$PROJECT_DIR$/third_part" />
+            <option value="$PROJECT_DIR$/third_part/koin" />
+            <option value="$PROJECT_DIR$/third_part/moshi" />
+            <option value="$PROJECT_DIR$/third_part/retrofit" />
             <option value="$PROJECT_DIR$/view_binding" />
           </set>
         </option>
