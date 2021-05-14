@@ -13,12 +13,18 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/jetpack" />
+            <option value="$PROJECT_DIR$/jetpack/data_binding" />
+            <option value="$PROJECT_DIR$/jetpack/data_store" />
+            <option value="$PROJECT_DIR$/jetpack/view_model" />
+            <option value="$PROJECT_DIR$/kotlin-android-extensions1deprecated" />
             <option value="$PROJECT_DIR$/kotlin_grammer" />
             <option value="$PROJECT_DIR$/plugin" />
+            <option value="$PROJECT_DIR$/retrofit" />
+            <option value="$PROJECT_DIR$/view_binding" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
-        <option name="useQualifiedModuleNames" value="true" />
       </GradleProjectSettings>
     </option>
   </component>
