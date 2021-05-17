@@ -14,3 +14,4 @@ include ':third_part:koin'
 include ':third_part:retrofit'
 
 include ':third_part:moshi'
+include ':touchevent'
