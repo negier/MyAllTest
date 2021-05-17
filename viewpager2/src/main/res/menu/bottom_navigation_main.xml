@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_1"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_alternate_email_24"
+        android:title="首页"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_2"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_beach_access_24"
+        android:title="时间线"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_3"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_directions_boat_24"
+        android:title="分析"
+        app:showAsAction="always" />
+</menu>

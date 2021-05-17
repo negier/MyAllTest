@@ -12,6 +12,10 @@ include ':jetpack:view_model'
 
 include ':third_part:koin'
 include ':third_part:retrofit'
-
 include ':third_part:moshi'
+
 include ':touchevent'
+
+include ':custom_view:drawable'
+include ':animation:view_animation'
+include ':viewpager2'

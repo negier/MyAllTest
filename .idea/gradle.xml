@@ -12,7 +12,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/animation" />
+            <option value="$PROJECT_DIR$/animation/view_animation" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/custom_view" />
+            <option value="$PROJECT_DIR$/custom_view/drawable" />
             <option value="$PROJECT_DIR$/jetpack" />
             <option value="$PROJECT_DIR$/jetpack/data_binding" />
             <option value="$PROJECT_DIR$/jetpack/data_store" />
@@ -26,6 +30,7 @@
             <option value="$PROJECT_DIR$/third_part/retrofit" />
             <option value="$PROJECT_DIR$/touchevent" />
             <option value="$PROJECT_DIR$/view_binding" />
+            <option value="$PROJECT_DIR$/viewpager2" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
