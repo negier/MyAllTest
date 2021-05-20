@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyAllTest">
-        <activity android:name=".ViewPager2BottomNavigationActivity"></activity>
+        <activity android:name=".ViewPager2CustomTabActivity"></activity>
+        <activity android:name=".ViewPager2TabLayoutActivity" />
+        <activity android:name=".ViewPager2BottomNavigationActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

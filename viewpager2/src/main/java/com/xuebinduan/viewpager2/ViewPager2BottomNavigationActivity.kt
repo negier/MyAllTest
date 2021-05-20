@@ -7,9 +7,9 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.xuebinduan.viewpager2.vp2bna.fragment.Fragment1
-import com.xuebinduan.viewpager2.vp2bna.fragment.Fragment2
-import com.xuebinduan.viewpager2.vp2bna.fragment.Fragment3
+import com.xuebinduan.viewpager2.fragment.Fragment1
+import com.xuebinduan.viewpager2.fragment.Fragment2
+import com.xuebinduan.viewpager2.fragment.Fragment3
 
 class ViewPager2BottomNavigationActivity : AppCompatActivity() {
     private lateinit var viewPager2: ViewPager2
@@ -29,7 +29,7 @@ class ViewPager2BottomNavigationActivity : AppCompatActivity() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
 
         viewPager2.adapter = object : FragmentStateAdapter(this) {
-            override fun getItemCount(): Int = 3
+            override fun getItemCount(): Int = menuItemToFragments.values.size
             override fun createFragment(position: Int): Fragment {
                 return menuItemToFragments.values.elementAt(position)
             }
