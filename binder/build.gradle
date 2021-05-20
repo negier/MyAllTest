@@ -8,7 +8,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.xuebinduan.retrofit"
+        applicationId "com.xuebinduan.binder"
         minSdkVersion 16
         targetSdkVersion 30
         versionCode 1
@@ -42,16 +42,4 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-
-    //Retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    //Moshi Json Converter
-    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
-    //协程
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9'
-    //LoggingInterceptor https://github.com/ihsanbal/LoggingInterceptor
-    implementation('com.github.ihsanbal:LoggingInterceptor:3.1.0') {
-        exclude group: 'org.json', module: 'json'
-    }
-
 }
