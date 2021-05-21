@@ -32,6 +32,7 @@
             <option value="$PROJECT_DIR$/touchevent" />
             <option value="$PROJECT_DIR$/view_binding" />
             <option value="$PROJECT_DIR$/viewpager2" />
+            <option value="$PROJECT_DIR$/windowmanager" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
