@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PixelFormat;
+import android.os.Binder;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.PowerManager;
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
             mLayoutParams.gravity = Gravity.CENTER | Gravity.TOP;
             mLayoutParams.x = 0;
             mLayoutParams.y = 100;
+            mLayoutParams.token = new Binder();
             TextView textView = new TextView(this);
             textView.setTextColor(Color.WHITE);
             textView.setTextSize(30);
