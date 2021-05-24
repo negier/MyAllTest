@@ -1,7 +1,9 @@
 package com.xuebinduan.binder
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.xuebinduan.binder.client.Client
 
 /**
  * RPC : Across Processes Communication
