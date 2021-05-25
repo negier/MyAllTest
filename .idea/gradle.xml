@@ -22,6 +22,7 @@
             <option value="$PROJECT_DIR$/jetpack/data_binding" />
             <option value="$PROJECT_DIR$/jetpack/data_store" />
             <option value="$PROJECT_DIR$/jetpack/view_model" />
+            <option value="$PROJECT_DIR$/jni" />
             <option value="$PROJECT_DIR$/kotlin-android-extensions1deprecated" />
             <option value="$PROJECT_DIR$/kotlin_grammer" />
             <option value="$PROJECT_DIR$/notifycation" />
