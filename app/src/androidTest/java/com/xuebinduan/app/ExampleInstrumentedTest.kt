@@ -1,4 +1,4 @@
-package com.xuebinduan.myalltest
+package com.xuebinduan.app
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,4 +1,4 @@
-package com.xuebinduan.myalltest
+package com.xuebinduan.base
 
 import org.junit.Test
 

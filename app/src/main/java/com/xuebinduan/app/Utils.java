@@ -1,4 +1,4 @@
-package com.xuebinduan.myalltest;
+package com.xuebinduan.app;
 
 public class Utils {
     private String say(){
