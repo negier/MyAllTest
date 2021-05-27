@@ -1,11 +1,16 @@
 package com.xuebinduan.io;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
 import org.junit.Test;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -14,9 +19,23 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.io.RandomAccessFile;
 import java.io.Reader;
+import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
+import java.nio.channels.SelectionKey;
+import java.nio.channels.Selector;
+import java.nio.channels.ServerSocketChannel;
+import java.nio.channels.SocketChannel;
+import java.nio.charset.Charset;
+
+import okio.Buffer;
+import okio.BufferedSource;
+import okio.Okio;
+import okio.Source;
 
 /**
  * 实现了Closeable接口的都可以放在try()的括号里面，然后它们会被自动关闭。（这是从java7开始的）。
@@ -143,4 +162,74 @@ public class Main {
             e.printStackTrace();
         }
     }
+
+    //todo NIO用的很少
+    /*
+     * NIO的Buffer可以被操作，是强制使用的，它不太好用；
+     * NIO支持非阻塞式，默认是阻塞式，但只有网络交互支持非阻塞，文件交互不支持
+     */
+
+    //NIO(New IO)
+    @Test
+    public void io8(){
+        try {
+            RandomAccessFile file = new RandomAccessFile("./text.txt","r");
+            FileChannel channel = file.getChannel();
+            //ByteBuffer的模型，capacity、position、limit
+            ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
+            channel.read(byteBuffer);
+//            byteBuffer.limit(byteBuffer.position());
+//            byteBuffer.position(0);
+            byteBuffer.flip();
+            System.out.println(Charset.defaultCharset().decode(byteBuffer));
+            byteBuffer.clear();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //非阻塞NIO
+    //telnet localhost 80
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    @Test
+    public void io9(){
+        try{
+            ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
+            serverSocketChannel.bind(new InetSocketAddress(80));
+            serverSocketChannel.configureBlocking(false);
+            Selector selector = Selector.open();
+            serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
+            while(true) {
+                selector.select();
+                for(SelectionKey key:selector.selectedKeys()){
+                    if(key.isAcceptable()){
+                        SocketChannel socketChannel = serverSocketChannel.accept();
+                        ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
+                        while(socketChannel.read(byteBuffer)!=-1) {
+                            byteBuffer.flip();
+                            socketChannel.write(byteBuffer);
+                            byteBuffer.clear();
+                        }
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //OKIO:Source、Sink
+    @Test
+    public void test10(){
+        try(BufferedSource source = Okio.buffer(Okio.source(new File("./text.txt")))){
+            System.out.println(source.readUtf8Line());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
