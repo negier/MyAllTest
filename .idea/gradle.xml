@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/binder" />
             <option value="$PROJECT_DIR$/custom_view" />
+            <option value="$PROJECT_DIR$/custom_view/dialog" />
             <option value="$PROJECT_DIR$/custom_view/drawable" />
             <option value="$PROJECT_DIR$/design_pattern" />
             <option value="$PROJECT_DIR$/develop_framework_my_app" />

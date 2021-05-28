@@ -1,8 +1,5 @@
-import java.text.SimpleDateFormat
-
 plugins {
     id 'com.android.application'
-    id 'kotlin-android'
 }
 
 android {
@@ -10,7 +7,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.xuebinduan.release_apk"
+        applicationId "com.xuebinduan.dialog"
         minSdkVersion 16
         targetSdkVersion 30
         versionCode 1
@@ -18,18 +15,9 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    signingConfigs {
-        release {
-            storeFile file(STORE_FILE)
-            storePassword KEYSTORE_PASSWORD
-            keyAlias KEY_ALIAS
-            keyPassword KEY_PASSWORD
-        }
-    }
+
     buildTypes {
         release {
-            //todo 这个也很重要
-            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -38,20 +26,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-    android.applicationVariants.all { variant ->
-        variant.outputs.all { output ->
-            def date = new SimpleDateFormat("yyyy-MM-dd").format(new Date())
-            outputFileName = "Goods-v" + variant.versionName + '_Build' + variant.versionCode + "_" + variant.buildType.name + "_" + date + '.apk'
-        }
-    }
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.1'
+
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
