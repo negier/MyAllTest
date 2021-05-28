@@ -4,21 +4,25 @@
         <variable
             name="user"
             type="com.xuebinduan.data_binding.User" />
-        <import type="androidx.databinding.ObservableBoolean"/>
+        <variable
+            name="text"
+            type="String" />
     </data>
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <TextView
-            android:id="@+id/text_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{user.name}"/>
         <TextView
-            android:id="@+id/text_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{user.address}"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{text}"/>
     </LinearLayout>
 </layout>
