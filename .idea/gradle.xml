@@ -35,6 +35,8 @@
             <option value="$PROJECT_DIR$/plugin" />
             <option value="$PROJECT_DIR$/recyclerview" />
             <option value="$PROJECT_DIR$/release_apk" />
+            <option value="$PROJECT_DIR$/study_abroad" />
+            <option value="$PROJECT_DIR$/study_abroad/ScalableImageView" />
             <option value="$PROJECT_DIR$/third_part" />
             <option value="$PROJECT_DIR$/third_part/koin" />
             <option value="$PROJECT_DIR$/third_part/moshi" />

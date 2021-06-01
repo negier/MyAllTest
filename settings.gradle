@@ -31,3 +31,6 @@ include ':recyclerview'
 include ':design_pattern'
 include ':io'
 include ':custom_view:dialog'
+
+//我的学习项目（即学习，非原创）
+include ':study_abroad:ScalableImageView'
