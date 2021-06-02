@@ -7,9 +7,12 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.GestureDetector
 import android.view.MotionEvent
+import android.view.ScaleGestureDetector
 import android.view.View
 import android.widget.OverScroller
+import androidx.core.animation.doOnEnd
 import androidx.core.view.GestureDetectorCompat
+import androidx.core.view.ScaleGestureDetectorCompat
 import androidx.core.view.ViewCompat
 import com.example.scalableimageviewtest.dp
 import com.example.scalableimageviewtest.getAvator
@@ -18,12 +21,13 @@ import kotlin.math.min
 
 /**
  * 思路流程：
- * 先做功能大图小图；再加手势双击缩放切换显示大图和小；然后再加属性动画；然后再加手势拖动，然后再加边界判断，使其不滑出边界；然后做惯性滑动；
+ * 先做功能大图小图；再加手势双击缩放切换显示大图和小；然后再加属性动画；然后再加手势拖动，然后再加边界判断，使其不滑出边界；然后做惯性滑动；然后做点击的部位从那放大功能；然后做双指缩放；
  */
 private val IMAGE_SIZE = 300.dp.toInt()
 private const val EXTRA_SCALE_FACTOR = 1.5f
 class ScalableImageView(context: Context?, attrs: AttributeSet?) : View(context, attrs),
-    GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener, Runnable {
+    GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener,
+    ScaleGestureDetector.OnScaleGestureListener {
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val bitmap = getAvator(resources,IMAGE_SIZE)
     private var originalOffsetX = 0f
@@ -33,15 +37,16 @@ class ScalableImageView(context: Context?, attrs: AttributeSet?) : View(context,
     private var smallScale = 1f
     private var bigScale = 1f
     private val gestureDetector = GestureDetectorCompat(context,this)
+    private val scaleGestureDetector = ScaleGestureDetector(context,this)
+    private val flingRunner = FlingRunner()
     private var big = false
-    private var scaleFraction = 0f
+    private var currentScale = 1f
         set(value) {
             field = value
             invalidate()
         }
-    private val scaleAnimator:ObjectAnimator by lazy{
-        ObjectAnimator.ofFloat(this,"scaleFraction",0f,1f)
-    }
+    private val scaleAnimator = ObjectAnimator.ofFloat(this,"currentScale",smallScale,bigScale)
+
     // 它就是一个计算器
     private val scroller = OverScroller(context)
 
@@ -62,18 +67,24 @@ class ScalableImageView(context: Context?, attrs: AttributeSet?) : View(context,
             smallScale = height/bitmap.height.toFloat()
             bigScale = width/bitmap.width.toFloat() * EXTRA_SCALE_FACTOR
         }
+        currentScale = smallScale
+        scaleAnimator.setFloatValues(smallScale,bigScale)
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
-        return gestureDetector.onTouchEvent(event)
+        scaleGestureDetector.onTouchEvent(event)
+        if (!scaleGestureDetector.isInProgress) {
+            gestureDetector.onTouchEvent(event)
+        }
+        return true
     }
 
     //这里倒着想问题会简单很多
     override fun onDraw(canvas: Canvas) {
         canvas.save()
-        canvas.translate(offsetX,offsetY)
-        val scale = smallScale + (bigScale-smallScale) * scaleFraction
-        canvas.scale(scale,scale,width/2f,height/2f)
+        val scaleFraction = (currentScale-smallScale) / (bigScale - smallScale)
+        canvas.translate(offsetX*scaleFraction,offsetY*scaleFraction)
+        canvas.scale(currentScale,currentScale,width/2f,height/2f)
         canvas.drawBitmap(bitmap,originalOffsetX,originalOffsetY,paint)
         canvas.restore()
     }
@@ -111,14 +122,18 @@ class ScalableImageView(context: Context?, attrs: AttributeSet?) : View(context,
     ): Boolean {
         if(big) {
             offsetX -= distanceX
-            offsetX = min(offsetX,(bitmap.width*bigScale-width)/2)
-            offsetX = max(offsetX,-(bitmap.width*bigScale-width)/2)
             offsetY -= distanceY
-            offsetY = min(offsetY,(bitmap.height*bigScale-height)/2)
-            offsetY = max(offsetY,-(bitmap.height*bigScale-height)/2)
+            fixOffsets()
             invalidate()
         }
        return false
+    }
+
+    private fun fixOffsets() {
+        offsetX = min(offsetX, (bitmap.width * bigScale - width) / 2)
+        offsetX = max(offsetX, -(bitmap.width * bigScale - width) / 2)
+        offsetY = min(offsetY, (bitmap.height * bigScale - height) / 2)
+        offsetY = max(offsetY, -(bitmap.height * bigScale - height) / 2)
     }
 
     /**
@@ -143,20 +158,9 @@ class ScalableImageView(context: Context?, attrs: AttributeSet?) : View(context,
                 40.dp.toInt()
             )
             // 表示在下一帧调用
-            ViewCompat.postOnAnimation(this,this)
+            ViewCompat.postOnAnimation(this,flingRunner)
         }
         return false
-    }
-
-    override fun run() {
-        if(scroller.computeScrollOffset()) {
-            offsetX = scroller.currX.toFloat()
-            offsetY = scroller.currY.toFloat()
-            //这个是为了让其调用onDraw
-            invalidate()
-            //表示每帧更新一次
-            ViewCompat.postOnAnimation(this,this)
-        }
     }
 
     /**
@@ -170,9 +174,20 @@ class ScalableImageView(context: Context?, attrs: AttributeSet?) : View(context,
     /**
      * @return 返回值没用
      */
-    override fun onDoubleTap(e: MotionEvent?): Boolean {
+    override fun onDoubleTap(e: MotionEvent): Boolean {
+        //这一段是我加的
+        big = currentScale > smallScale
+        if (big){
+            scaleAnimator.setFloatValues(smallScale,currentScale)
+        }else{
+            scaleAnimator.setFloatValues(currentScale,bigScale)
+        }
+
         big = !big
         if (big){
+            offsetX = (e.x - width/2)*(1-bigScale/smallScale)
+            offsetY = (e.y - height/2)*(1-bigScale/smallScale)
+            fixOffsets()
             scaleAnimator.start()
         }else{
             scaleAnimator.reverse()
@@ -185,6 +200,53 @@ class ScalableImageView(context: Context?, attrs: AttributeSet?) : View(context,
      */
     override fun onDoubleTapEvent(e: MotionEvent?): Boolean {
         return false
+    }
+
+    /*
+    //可以用这个来简化代码，但我就不简化了，因为我希望保留注释意思
+    inner class MyGestureListener: GestureDetector.SimpleOnGestureListener() {
+        override fun onDown(e: MotionEvent?): Boolean {
+            return true
+        }
+    }
+    //25:06
+    */
+
+    inner class FlingRunner:Runnable{
+        override fun run() {
+            if(scroller.computeScrollOffset()) {
+                offsetX = scroller.currX.toFloat()
+                offsetY = scroller.currY.toFloat()
+                //这个是为了让其调用onDraw
+                invalidate()
+                //表示每帧更新一次
+                ViewCompat.postOnAnimation(this@ScalableImageView,this)
+            }
+        }
+    }
+
+    /**
+     * @return true,detector.scaleFactor获取到的是此刻状态和上一刻状态的比值；false,此刻状态和初始状态的比值，TODO 上一刻的状态会一直保存着
+     */
+    override fun onScale(detector: ScaleGestureDetector): Boolean {
+        val tempCurrentScale = currentScale * detector.scaleFactor
+        if(tempCurrentScale < smallScale || tempCurrentScale > bigScale){
+            return false
+        }else{
+            currentScale *= detector.scaleFactor
+            return true
+        }
+        //最少是smallScale，最大是bigScale，这个语法是真的清晰 todo 没啥用了现在，留着看看
+        //currentScale = currentScale.coerceAtLeast(smallScale).coerceAtMost(bigScale)
+    }
+
+    override fun onScaleBegin(detector: ScaleGestureDetector): Boolean {
+        offsetX = (detector.focusX - width/2)*(1-bigScale/smallScale)
+        offsetY = (detector.focusY - height/2)*(1-bigScale/smallScale)
+        return true
+    }
+
+    override fun onScaleEnd(detector: ScaleGestureDetector?) {
     }
 
 }
