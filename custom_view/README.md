@@ -7,3 +7,6 @@ Android系统的整个视图的结构：
 绘图机制：
 SurfaceFlinger、Surface、ViewRootImpl、View、ViewGroup、WindowManager、Binder
 
+```
+canvas = mSurface.lockCanvas(dirty);
+```
