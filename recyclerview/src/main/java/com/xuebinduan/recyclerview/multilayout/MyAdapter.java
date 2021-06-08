@@ -1,14 +1,11 @@
 package com.xuebinduan.recyclerview.multilayout;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.xuebinduan.recyclerview.R;
-import com.xuebinduan.recyclerview.multilayout.DataProvider;
-import com.xuebinduan.recyclerview.multilayout.DataType;
 import com.xuebinduan.recyclerview.multilayout.viewholder.BaseViewHolder;
 import com.xuebinduan.recyclerview.multilayout.viewholder.DataOneViewHolder;
 import com.xuebinduan.recyclerview.multilayout.viewholder.DataTwoViewHolder;
@@ -25,17 +22,20 @@ public class MyAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         notifyDataSetChanged();
     }
 
+    public void removeAllData(){
+        this.list.clear();
+        notifyDataSetChanged();
+    }
+
     @Override
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view1 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_one,parent,false);
-        View view2 = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_two,parent,false);
         BaseViewHolder holder = null;
         switch (viewType){
             case DataType.DATA_ONE:
-                holder = new DataOneViewHolder(view1);
+                holder = new DataOneViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_one,parent,false));
                 break;
             case DataType.DATA_TWO:
-                holder = new DataTwoViewHolder(view2);
+                holder = new DataTwoViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_two,parent,false));
                 break;
         }
         return holder;
