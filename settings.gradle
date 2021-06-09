@@ -34,3 +34,6 @@ include ':custom_view:dialog'
 
 //我的学习项目（即学习，非原创）
 include ':study_abroad:ScalableImageView'
+
+//画线：签名
+include ':draw_signing'
