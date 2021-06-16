@@ -1,7 +1,5 @@
 package com.xuebinduan.windowmanager;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.KeyguardManager;
 import android.content.Context;
 import android.content.Intent;
@@ -15,10 +13,11 @@ import android.os.SystemClock;
 import android.provider.Settings;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -36,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         //Settings.canDrawOverlays(this)  检查是否有悬浮窗权限
         if(!Settings.canDrawOverlays(this)){
@@ -106,15 +106,26 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void awakeScreenLight(){
-        KeyguardManager km= (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus) {
+            View view = new View(this);
+            view.setBackgroundColor(Color.RED);
+            view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 600));
+            WindowManagerUtil.popupChildWindow(this, view, 0, 100);
+        }
+    }
+
+    private void awakeScreenLight() {
+        KeyguardManager km = (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
         KeyguardManager.KeyguardLock kl = km.newKeyguardLock("unLock");
         //解锁
         kl.disableKeyguard();
 
-        PowerManager pm=(PowerManager) getSystemService(Context.POWER_SERVICE);
+        PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
         //获取PowerManager.WakeLock对象
-        PowerManager.WakeLock wl = pm.newWakeLock(PowerManager.ACQUIRE_CAUSES_WAKEUP | PowerManager.SCREEN_DIM_WAKE_LOCK,"bright");
+        PowerManager.WakeLock wl = pm.newWakeLock(PowerManager.ACQUIRE_CAUSES_WAKEUP | PowerManager.SCREEN_DIM_WAKE_LOCK, "bright");
         //获取锁
         wl.acquire();
         //释放锁
