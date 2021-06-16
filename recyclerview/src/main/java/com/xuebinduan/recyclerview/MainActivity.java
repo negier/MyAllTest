@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.xuebinduan.recyclerview.loadmore.LoadMoreAdapter;
 import com.xuebinduan.recyclerview.multilayout.DataProvider;
 import com.xuebinduan.recyclerview.multilayout.DataType;
 import com.xuebinduan.recyclerview.multilayout.MyAdapter;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+/*
         MyAdapter myAdapter = new MyAdapter();
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
@@ -97,6 +99,31 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         myAdapter.removeAllData();
+                    }
+                });
+            }
+        }).start();
+
+        */
+
+        LoadMoreAdapter adapter = new LoadMoreAdapter(true);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
+            @Override
+            public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
+                outRect.bottom = 10;
+            }
+        });
+        recyclerView.setAdapter(adapter);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                SystemClock.sleep(5000);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        adapter.hideLoadMoreUI();
                     }
                 });
             }
