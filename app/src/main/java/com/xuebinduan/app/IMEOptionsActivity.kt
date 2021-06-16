@@ -1,15 +1,14 @@
 package com.xuebinduan.app
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class MainActivity : AppCompatActivity() {
+/**
+ * singleLine = true，会自动带上点击键盘换到下一行的效果
+ */
+class IMEOptionsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        startActivity(Intent(this,IMEOptionsActivity::class.java))
-
+        setContentView(R.layout.activity_imeoptions)
     }
 }
