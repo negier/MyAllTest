@@ -1,28 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <variable
             name="user"
             type="com.xuebinduan.data_binding.User" />
+
         <variable
             name="text"
             type="String" />
     </data>
+
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{user.name}"/>
+            android:text="@{user.name}" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{user.address}"/>
+            android:text="@{user.address}" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{text}"/>
+            android:text="@{text}" />
+
+        <!--    注意写法@{}    -->
+        <TextView
+            goneUnless="@{false}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="你看不见我看不见我" />
     </LinearLayout>
 </layout>
