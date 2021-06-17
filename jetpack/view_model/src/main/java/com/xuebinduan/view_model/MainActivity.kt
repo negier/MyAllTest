@@ -1,25 +1,22 @@
 package com.xuebinduan.view_model
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.xuebinduan.view_model.databinding.ActivityMainBinding
 import kotlin.concurrent.thread
-import kotlin.properties.ReadOnlyProperty
-import kotlin.reflect.KProperty
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var myViewModel: MyViewModel
+    val myViewModel: MyViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        myViewModel = ViewModelProvider(this,ViewModelProvider.NewInstanceFactory()).get(MyViewModel::class.java)
+//        myViewModel = ViewModelProvider(this,ViewModelProvider.NewInstanceFactory()).get(MyViewModel::class.java)
         val binding: ActivityMainBinding = DataBindingUtil.setContentView(
             this, R.layout.activity_main)
         binding.viewModel = myViewModel
