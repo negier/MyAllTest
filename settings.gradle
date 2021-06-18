@@ -33,7 +33,9 @@ include ':io'
 include ':custom_view:dialog'
 
 //我的学习项目（即学习，非原创）
-include ':study_abroad:ScalableImageView'
+include ':study_abroad:HenCoder:ScalableImageView'
 
 //画线：签名
 include ':draw_signing'
+include ':study_abroad:HenCoder:MyViewPager'
+include ':study_abroad:HenCoder:DrawingMultiTouch'

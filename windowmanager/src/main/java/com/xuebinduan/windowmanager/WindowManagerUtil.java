@@ -9,12 +9,13 @@ import android.view.View;
 import android.view.WindowManager;
 
 public class WindowManagerUtil {
+    private static WindowManager mWindowManager;
     public static void popupChildWindow(Activity activity, View view, int anchorX, int anchorY){
         IBinder token = activity.getWindow().getDecorView().getWindowToken();
         if (token != null){
-            WindowManager windowManager = (WindowManager) activity.getSystemService(Context.WINDOW_SERVICE);
+            mWindowManager = (WindowManager) activity.getSystemService(Context.WINDOW_SERVICE);
             WindowManager.LayoutParams mLayoutParams = new WindowManager.LayoutParams(
-                    WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT, 0, 0,
+                    WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT, 0, 0,
                     PixelFormat.TRANSPARENT);
             if (view.getLayoutParams()!=null){
                 mLayoutParams.width = view.getLayoutParams().width;
@@ -26,9 +27,14 @@ public class WindowManagerUtil {
             mLayoutParams.x = anchorX;
             mLayoutParams.y = anchorY;
             mLayoutParams.token = token;
-            windowManager.addView(view, mLayoutParams);
+            mWindowManager.addView(view, mLayoutParams);
         }else{
             throw new IllegalStateException("请在父窗口绘制流程结束时调用，Activity#onWindowFocusChanged、View#post(runnable)、ViewTreeObserver");
+        }
+    }
+    public static void removeWindow(View view){
+        if (mWindowManager!=null){
+            mWindowManager.removeView(view);
         }
     }
 }
