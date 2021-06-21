@@ -1,4 +1,4 @@
-package com.xuebinduan.view_animation
+package com.xuebinduan.animation
 
 import org.junit.Test
 

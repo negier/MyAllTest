@@ -1,4 +1,4 @@
-package com.xuebinduan.view_animation
+package com.xuebinduan.animation
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.xuebinduan.view_animation", appContext.packageName)
+        assertEquals("com.xuebinduan.animation", appContext.packageName)
     }
 }
