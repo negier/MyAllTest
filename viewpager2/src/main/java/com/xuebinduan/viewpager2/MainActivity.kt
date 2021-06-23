@@ -9,6 +9,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        /**
+         * adapter:
+         * FragmentStateAdapter
+         * RecyclerView.Adapter
+         */
+
         startActivity(Intent(this,ViewPager2BottomNavigationActivity::class.java))
 //        startActivity(Intent(this,ViewPager2TabLayoutActivity::class.java))
 //        startActivity(Intent(this,ViewPager2CustomTabActivity::class.java))
