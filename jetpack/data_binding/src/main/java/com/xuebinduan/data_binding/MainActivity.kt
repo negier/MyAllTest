@@ -9,6 +9,8 @@ import kotlin.concurrent.thread
 
 /**
  * databinding并没有明显区分variable和view的id的名字，一般是variable和id重名了，优先表示id。（不过这时一般不需要在使用id了）
+ *
+ * todo databinding布局文件不需要tools
  */
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
