@@ -27,6 +27,7 @@
             <option value="$PROJECT_DIR$/jetpack" />
             <option value="$PROJECT_DIR$/jetpack/data_binding" />
             <option value="$PROJECT_DIR$/jetpack/data_store" />
+            <option value="$PROJECT_DIR$/jetpack/paging3" />
             <option value="$PROJECT_DIR$/jetpack/view_model" />
             <option value="$PROJECT_DIR$/jni" />
             <option value="$PROJECT_DIR$/kotlin-android-extensions1deprecated" />
