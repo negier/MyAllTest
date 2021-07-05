@@ -10,10 +10,10 @@ class MyViewModel : ViewModel() {
 
 
     val flow = Pager(
-        PagingConfig(pageSize = 1)
+        PagingConfig(pageSize = 20)
     ) {
         ExamplePagingSource()
-    }.flow
+    }.flow.cachedIn(viewModelScope)
 
 
 }
