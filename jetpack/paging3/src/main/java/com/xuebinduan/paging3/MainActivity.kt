@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 //            }
 //        }
 
-        //初始状态添加监听
+        //添加监听
         pagingAdapter.addLoadStateListener {
             when (it.refresh) {
                 is LoadState.NotLoading -> {
