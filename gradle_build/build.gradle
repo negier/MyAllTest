@@ -64,3 +64,58 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     compileOnly 'com.android.tools.build:gradle:3.0.1'
 }
+
+//====================plugin练习====================
+class MyAwesomePlugin implements Plugin<Project>{
+    @Override
+    void apply(Project project) {
+        10.times{i ->
+            //todo 这里task前面需要加project.
+            project.task('task'+i){
+                if (i%2==0){
+                    dependsOn('first')
+                }
+                def capturedI = i
+                doLast {
+                    println("Executing task ${capturedI}")
+                }
+            }
+        }
+    }
+}
+//本质上就等于实例了这个类调用了这个类里面的那个apply方法，执行完了之后，这个方法就返回了
+apply([plugin:MyAwesomePlugin])
+
+//====================gradle练习====================
+/*
+ * 生命周期：
+ * Initialization,初始化阶段，一般不会接触到
+ * Configuration,配置阶段，本质上就是将build.gradle从头执行到尾
+ * Execution,执行阶段
+ */
+task("helloworld"){
+    println 'configure'
+    doLast {
+        println("Executing task")
+    }
+}
+//钩子函数，在evaluate之后执行，即在configuration阶段gradle引擎将build.gradle从头到尾执行一遍之后，这时即是完成了evaluate，这时即会执行这个钩子函数
+afterEvaluate {
+    println("after evaluate")
+}
+task('first'){
+    println("configuring")
+    doLast {println("I'm first task")}
+}
+/*
+10.times{i->
+    task('task'+i){
+        if (i%2==0){
+            dependsOn('first')
+        }
+        def capturedI = i
+        doLast {
+            println("Executing task ${capturedI}")
+        }
+    }
+}*/

@@ -1,0 +1,1 @@
+//class MyPlugin implements Plugin<Project>{}

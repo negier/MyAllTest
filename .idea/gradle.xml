@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/animation" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/binder" />
+            <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/custom_view" />
             <option value="$PROJECT_DIR$/custom_view/dialog" />
             <option value="$PROJECT_DIR$/custom_view/drawable" />
