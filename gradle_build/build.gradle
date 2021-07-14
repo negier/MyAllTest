@@ -84,7 +84,7 @@ class MyAwesomePlugin implements Plugin<Project>{
         }
     }
 }
-//本质上就等于实例了这个类调用了这个类里面的那个apply方法，执行完了之后，这个方法就返回了
+//本质上就等于实例了这个插件类调用了这个类里面的那个apply方法，执行完了之后，这个方法就返回了
 apply([plugin:MyAwesomePlugin])
 //-----------2------------------
 class HenCoderPlugin implements Plugin<Project>{
