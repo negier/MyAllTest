@@ -66,6 +66,7 @@ dependencies {
 }
 
 //====================plugin练习====================
+//插件的意义在于复用
 class MyAwesomePlugin implements Plugin<Project>{
     @Override
     void apply(Project project) {
@@ -85,6 +86,30 @@ class MyAwesomePlugin implements Plugin<Project>{
 }
 //本质上就等于实例了这个类调用了这个类里面的那个apply方法，执行完了之后，这个方法就返回了
 apply([plugin:MyAwesomePlugin])
+//-----------2------------------
+class HenCoderPlugin implements Plugin<Project>{
+    @Override
+    void apply(Project project) {
+        def extension = project.extensions.create("hencoder",HenCoderExtension)
+        project.afterEvaluate {
+            println "Hello ${extension.name}!"
+        }
+    }
+}
+class HenCoderExtension{
+    def name = 'duanxuebin'
+}
+apply plugin: HenCoderPlugin
+hencoder{
+    name 'negier' //name('negier'),即setName('negier')
+}
+//-----------3------------------
+//todo 看buildSrc项目
+//todo 记得在文件头部声明package com.xxx.xxx
+apply plugin: 'com.xuebinduan.testplugin'
+hencoder2{
+    name 'buildSrc negier' //name('negier'),即setName('negier')
+}
 
 //====================gradle练习====================
 /*
