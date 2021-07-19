@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             .connectTimeout(30, TimeUnit.SECONDS)
             .writeTimeout(30, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
-            .addInterceptor(ShowRawBodyInterceptor()) //todo 这里拦截器顺序很重要呀，如果这个写在LoggingInterceptor的后面，LoggingInterceptor就打印不出格式化的响应数据
+            .addInterceptor(ShowRawBodyInterceptor())
             .addInterceptor(LoggingInterceptor.Builder().setLevel(Level.BASIC).tag(NET_MSG_TAG).log(Platform.WARN).build())
             .build()
 

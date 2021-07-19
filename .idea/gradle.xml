@@ -38,10 +38,12 @@
             <option value="$PROJECT_DIR$/plugin" />
             <option value="$PROJECT_DIR$/recyclerview" />
             <option value="$PROJECT_DIR$/release_apk" />
+            <option value="$PROJECT_DIR$/sensor" />
             <option value="$PROJECT_DIR$/study_abroad" />
             <option value="$PROJECT_DIR$/study_abroad/HenCoder" />
             <option value="$PROJECT_DIR$/study_abroad/HenCoder/Animation" />
             <option value="$PROJECT_DIR$/study_abroad/HenCoder/Camera" />
+            <option value="$PROJECT_DIR$/study_abroad/HenCoder/CustomViewNestedScroll" />
             <option value="$PROJECT_DIR$/study_abroad/HenCoder/CustomViewTouchDrag" />
             <option value="$PROJECT_DIR$/study_abroad/HenCoder/Drawable" />
             <option value="$PROJECT_DIR$/study_abroad/HenCoder/DrawingMultiTouch" />
