@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/binder" />
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/custom_view" />
+            <option value="$PROJECT_DIR$/custom_view/OverScroller" />
             <option value="$PROJECT_DIR$/custom_view/dialog" />
             <option value="$PROJECT_DIR$/custom_view/drawable" />
             <option value="$PROJECT_DIR$/design_pattern" />
@@ -41,6 +42,11 @@
             <option value="$PROJECT_DIR$/sensor" />
             <option value="$PROJECT_DIR$/study_abroad" />
             <option value="$PROJECT_DIR$/study_abroad/HenCoder" />
+            <option value="$PROJECT_DIR$/study_abroad/HenCoder/APT" />
+            <option value="$PROJECT_DIR$/study_abroad/HenCoder/APT/BindView" />
+            <option value="$PROJECT_DIR$/study_abroad/HenCoder/APT/lib" />
+            <option value="$PROJECT_DIR$/study_abroad/HenCoder/APT/lib-annotations" />
+            <option value="$PROJECT_DIR$/study_abroad/HenCoder/APT/lib-processor" />
             <option value="$PROJECT_DIR$/study_abroad/HenCoder/Animation" />
             <option value="$PROJECT_DIR$/study_abroad/HenCoder/Camera" />
             <option value="$PROJECT_DIR$/study_abroad/HenCoder/CustomViewNestedScroll" />

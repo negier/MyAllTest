@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.paging.PagingDataAdapter;
+import androidx.recyclerview.widget.ConcatAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class EmptyViewUtil {
@@ -67,7 +69,17 @@ public class EmptyViewUtil {
     }
 
     private static void showEmptyViewOrNot(RecyclerView.Adapter adapter, RecyclerView recyclerView, View emptyView){
-        if (adapter.getItemCount() > 0) {
+        int itemCount = adapter.getItemCount();
+        //针对使用PagingDataAdapter的情况
+        if (adapter instanceof ConcatAdapter){
+            for(RecyclerView.Adapter a : ((ConcatAdapter) adapter).getAdapters()){
+                if (a instanceof PagingDataAdapter){
+                    itemCount = a.getItemCount();
+                }
+            }
+        }
+
+        if (itemCount > 0) {
             recyclerView.setVisibility(View.VISIBLE);
             emptyView.setVisibility(View.GONE);
         } else {
