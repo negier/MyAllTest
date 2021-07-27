@@ -22,6 +22,7 @@
       <module name="MyAllTest.jni" target="11" />
       <module name="MyAllTest.kotlin-android-extensions1deprecated" target="11" />
       <module name="MyAllTest.kotlin_grammer" target="11" />
+      <module name="MyAllTest.mvp" target="11" />
       <module name="MyAllTest.notifycation" target="11" />
       <module name="MyAllTest.plugin" target="11" />
       <module name="MyAllTest.recyclerview" target="11" />
