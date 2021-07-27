@@ -47,6 +47,10 @@ android {
             exclude "ldpi","xxhdpi","xxxhdpi"
         }
     }
+
+    buildFeatures{
+        dataBinding true
+    }
 }
 
 gradle.taskGraph.whenReady{
