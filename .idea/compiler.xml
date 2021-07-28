@@ -14,6 +14,7 @@
       <module name="MyAllTest.develop_framework_my_app.base" target="11" />
       <module name="MyAllTest.draw_signing" target="11" />
       <module name="MyAllTest.gradle_build" target="11" />
+      <module name="MyAllTest.intent" target="11" />
       <module name="MyAllTest.io" target="11" />
       <module name="MyAllTest.jetpack.data_binding" target="11" />
       <module name="MyAllTest.jetpack.data_store" target="11" />

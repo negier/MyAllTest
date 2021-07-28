@@ -26,6 +26,7 @@
             <option value="$PROJECT_DIR$/develop_framework_my_app/base" />
             <option value="$PROJECT_DIR$/draw_signing" />
             <option value="$PROJECT_DIR$/gradle_build" />
+            <option value="$PROJECT_DIR$/intent" />
             <option value="$PROJECT_DIR$/io" />
             <option value="$PROJECT_DIR$/jetpack" />
             <option value="$PROJECT_DIR$/jetpack/data_binding" />
