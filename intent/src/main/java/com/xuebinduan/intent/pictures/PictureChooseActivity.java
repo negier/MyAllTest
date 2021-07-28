@@ -50,17 +50,15 @@ public class PictureChooseActivity extends AppCompatActivity {
     }
 
     private void obtainFileInfo(Uri uri) {
-        try {
-            getContentResolver().openInputStream(uri); //todo 这个能获取到内容但获取不到文件属性如名字、路径等
-//            File file = new File();
+//        try {
+//            getContentResolver().openInputStream(uri); //todo 这个能获取到内容但获取不到文件属性如名字、路径等
+//            File file = new File(); //todo 但这个需要绝对地址
 //            Log.e("TAG","File Name: "+file.getName());
 //            Log.e("TAG","File Path: "+file.getAbsolutePath());
 //            Log.e("TAG","File Size: "+file.length());
-//        } catch (URISyntaxException e) {
+//        } catch (FileNotFoundException e) {
 //            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+//        }
     }
 
     public void launch(View view){
