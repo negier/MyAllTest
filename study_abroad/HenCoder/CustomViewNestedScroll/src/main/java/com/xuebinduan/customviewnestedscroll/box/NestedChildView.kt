@@ -1,4 +1,4 @@
-package com.xuebinduan.customviewnestedscroll
+package com.xuebinduan.customviewnestedscroll.box
 
 import android.content.Context
 import android.util.AttributeSet

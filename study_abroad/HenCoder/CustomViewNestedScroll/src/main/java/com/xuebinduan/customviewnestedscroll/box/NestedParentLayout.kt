@@ -1,4 +1,4 @@
-package com.xuebinduan.customviewnestedscroll
+package com.xuebinduan.customviewnestedscroll.box
 
 import android.content.Context
 import android.util.AttributeSet
@@ -31,13 +31,13 @@ class NestedParentLayout @JvmOverloads constructor(
             if (relativeParentChildRight > width) {
                 val dx = relativeParentChildRight - width
                 offsetLeftAndRight(dx)
-                consumed[0] += dx
+                consumed[0] = dx
             }
         } else {
             if (relativeParentChildLeft < 0) {
                 val dx = relativeParentChildLeft
                 offsetLeftAndRight(dx)
-                consumed[0] += dx
+                consumed[0] = dx
             }
         }
 
@@ -45,13 +45,13 @@ class NestedParentLayout @JvmOverloads constructor(
             if (relativeParentChildBottom > height) {
                 val dy = relativeParentChildBottom - height
                 offsetTopAndBottom(dy)
-                consumed[1] += dy
+                consumed[1] = dy
             }
         } else {
             if (relativeParentChildTop < 0) {
                 val dy = relativeParentChildTop
                 offsetTopAndBottom(dy)
-                consumed[1] += dy
+                consumed[1] = dy
             }
         }
     }
