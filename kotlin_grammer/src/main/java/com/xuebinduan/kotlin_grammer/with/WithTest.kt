@@ -12,6 +12,11 @@ fun main(){
         toString()
     }
 
+    /*val str = buildString {
+        append("hi")
+        append(" world")
+    }*/
+
     if (str is String){
         println(str)
     }
