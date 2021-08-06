@@ -14,6 +14,10 @@ include ':third_part:koin'
 include ':third_part:retrofit'
 include ':third_part:moshi'
 
+/*
+ * 我准备搭建的框架：
+ * 包名结构：以界面功能为包名目录，将相关的一些类文件放入如Adapter、Activity等，好处是修改定位巨容易。
+ */
 include ':develop_framework_my_app:app'
 include ':develop_framework_my_app:base'
 
