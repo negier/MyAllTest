@@ -2,7 +2,6 @@ rootProject.name = "MyAllTest"
 
 include ':kotlin_grammer'
 include ':plugin'
-include ':app'
 include ':view_binding'
 include ':kotlin-android-extensions1deprecated'
 
@@ -65,3 +64,8 @@ include ':study_abroad:hencoder:APT:lib'
 include ':mvp'
 include ':intent'
 include ':ime'
+
+include ':appindexes:app'
+include ':appindexes:keyboardimeoptions'
+
+include ':appindexes:base64'
