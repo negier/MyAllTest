@@ -10,6 +10,7 @@ import android.os.Bundle;
 import com.xuebinduan.app.databinding.ActivityMainBinding;
 import com.xuebinduan.base64.Base64Activity;
 import com.xuebinduan.keyboardimeoptions.IMEOptionsActivity;
+import com.xuebinduan.looknewaddfile2.SplashLookNewAddFileActivity;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding mBinding;
@@ -35,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
     private ItemBean[] loadData() {
         ItemBean[] itemBeans = new ItemBean[]{
                 new ItemBean(R.mipmap.keyboardimeoptions,getString(R.string.keyboardimeoptions), IMEOptionsActivity.class),
-                new ItemBean(R.mipmap.base64,getString(R.string.base64), Base64Activity.class)
+                new ItemBean(R.mipmap.base64,getString(R.string.base64), Base64Activity.class),
+                new ItemBean(R.mipmap.looknewaddfile,getString(R.string.looknewaddfile), SplashLookNewAddFileActivity.class)
         };
         return itemBeans;
     }

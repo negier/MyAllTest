@@ -69,3 +69,4 @@ include ':appindexes:app'
 include ':appindexes:keyboardimeoptions'
 
 include ':appindexes:base64'
+include ':appindexes:looknewaddfile2'
