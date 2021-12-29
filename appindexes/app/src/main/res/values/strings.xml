@@ -3,4 +3,5 @@
     <string name="keyboardimeoptions">键盘IMEOptions</string>
     <string name="base64">Base64</string>
     <string name="looknewaddfile">查看公区新增文件</string>
+    <string name="bestinfiniteloop">无限循环轮播图</string>
 </resources>

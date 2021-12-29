@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.xuebinduan.app"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -37,6 +37,7 @@ dependencies {
     implementation project(path: ':appindexes:keyboardimeoptions')
     implementation project(path: ':appindexes:base64')
     implementation project(path: ':appindexes:looknewaddfile2')
+    implementation project(path: ':appindexes:bestinfiniteloop')
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

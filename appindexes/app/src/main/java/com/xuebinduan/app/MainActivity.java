@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.os.Bundle;
 
+import com.negier.loop.bestinfiniteloop.BestInfiniteLoopActivity;
 import com.xuebinduan.app.databinding.ActivityMainBinding;
 import com.xuebinduan.base64.Base64Activity;
 import com.xuebinduan.keyboardimeoptions.IMEOptionsActivity;
@@ -37,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
         ItemBean[] itemBeans = new ItemBean[]{
                 new ItemBean(R.mipmap.keyboardimeoptions,getString(R.string.keyboardimeoptions), IMEOptionsActivity.class),
                 new ItemBean(R.mipmap.base64,getString(R.string.base64), Base64Activity.class),
-                new ItemBean(R.mipmap.looknewaddfile,getString(R.string.looknewaddfile), SplashLookNewAddFileActivity.class)
+                new ItemBean(R.mipmap.looknewaddfile,getString(R.string.looknewaddfile), SplashLookNewAddFileActivity.class),
+                new ItemBean(R.mipmap.bestinfiniteloop,getString(R.string.bestinfiniteloop), BestInfiniteLoopActivity.class)
         };
         return itemBeans;
     }
