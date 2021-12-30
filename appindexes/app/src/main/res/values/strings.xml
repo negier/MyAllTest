@@ -6,4 +6,5 @@
     <string name="bestinfiniteloop">无限循环轮播图</string>
     <string name="choosephoto">选择照片</string>
     <string name="contactlist">联系人列表</string>
+    <string name="coordinatorlayout">CoordinatorLayout协调布局学习</string>
 </resources>
