@@ -14,6 +14,7 @@
       <module name="MyAllTest.appindexes.keyboardimeoptions" target="11" />
       <module name="MyAllTest.appindexes.looknewaddfile" target="11" />
       <module name="MyAllTest.appindexes.looknewaddfile2" target="11" />
+      <module name="MyAllTest.appindexes.neteasemusicanimation" target="11" />
       <module name="MyAllTest.binder" target="11" />
       <module name="MyAllTest.buildSrc" target="11" />
       <module name="MyAllTest.custom_view.dialog" target="11" />

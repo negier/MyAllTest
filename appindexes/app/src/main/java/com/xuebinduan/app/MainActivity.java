@@ -11,6 +11,7 @@ import com.negier.choosephoto.ChoosePhotoMainActivity;
 import com.negier.contactlistview.ContactsActivity;
 import com.negier.coordinatorlayoutdemo.CoordinatorLayoutMainActivity;
 import com.negier.coverbaidulangbottom.CoverBaiduLangBottomMainActivity;
+import com.negier.coverneteasemusicoverridependingtransition.NeteaseMusicAnimMainActivity;
 import com.negier.loop.bestinfiniteloop.BestInfiniteLoopActivity;
 import com.xuebinduan.app.databinding.ActivityMainBinding;
 import com.xuebinduan.base64.Base64Activity;
@@ -46,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
                 new ItemBean(R.mipmap.choosephoto,getString(R.string.choosephoto), ChoosePhotoMainActivity.class),
                 new ItemBean(R.mipmap.contactlist,getString(R.string.contactlist), ContactsActivity.class),
                 new ItemBean(R.mipmap.img_black,getString(R.string.coordinatorlayout), CoordinatorLayoutMainActivity.class),
-                new ItemBean(R.mipmap.coverbaidulangbottom,getString(R.string.coverbaidulangbottom), CoverBaiduLangBottomMainActivity.class)
+                new ItemBean(R.mipmap.coverbaidulangbottom,getString(R.string.coverbaidulangbottom), CoverBaiduLangBottomMainActivity.class),
+                new ItemBean(R.mipmap.img_black,getString(R.string.neteasemusicanimation), NeteaseMusicAnimMainActivity.class),
         };
         return itemBeans;
     }
