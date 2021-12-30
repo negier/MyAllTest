@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_contacts"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.negier.contactlistview.ContactsActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_contacts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <com.negier.contactlistview.view.SideBar
+            android:id="@+id/sidebar"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"/>
+        <TextView
+            android:id="@+id/tv_letter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:textSize="40sp"
+            android:text=""
+            android:layout_gravity="center"
+            android:textColor="#00a84b"
+            />
+    </FrameLayout>
+
+</LinearLayout>
