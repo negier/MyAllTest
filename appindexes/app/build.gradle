@@ -41,6 +41,7 @@ dependencies {
     implementation project(path: ':appindexes:choosephoto')
     implementation project(path: ':appindexes:contactlist')
     implementation project(path: ':appindexes:coordinatorlayout')
+    implementation project(path: ':appindexes:coverbaidulangbottom')
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
