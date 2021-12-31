@@ -2,6 +2,16 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
+      <module name="MyAllTest.allappindexes.app" target="11" />
+      <module name="MyAllTest.allappindexes.base64" target="11" />
+      <module name="MyAllTest.allappindexes.bestinfiniteloop" target="11" />
+      <module name="MyAllTest.allappindexes.choosephoto" target="11" />
+      <module name="MyAllTest.allappindexes.contactlist" target="11" />
+      <module name="MyAllTest.allappindexes.coordinatorlayout" target="11" />
+      <module name="MyAllTest.allappindexes.coverbaidulangbottom" target="11" />
+      <module name="MyAllTest.allappindexes.keyboardimeoptions" target="11" />
+      <module name="MyAllTest.allappindexes.looknewaddfile2" target="11" />
+      <module name="MyAllTest.allappindexes.neteasemusicanimation" target="11" />
       <module name="MyAllTest.animation" target="11" />
       <module name="MyAllTest.app" target="11" />
       <module name="MyAllTest.appindexes.app" target="11" />
@@ -11,6 +21,7 @@
       <module name="MyAllTest.appindexes.contactlist" target="11" />
       <module name="MyAllTest.appindexes.coordinatorlayout" target="11" />
       <module name="MyAllTest.appindexes.coverbaidulangbottom" target="11" />
+      <module name="MyAllTest.appindexes.englishu" target="11" />
       <module name="MyAllTest.appindexes.keyboardimeoptions" target="11" />
       <module name="MyAllTest.appindexes.looknewaddfile" target="11" />
       <module name="MyAllTest.appindexes.looknewaddfile2" target="11" />

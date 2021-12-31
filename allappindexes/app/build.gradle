@@ -34,15 +34,15 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation project(path: ':appindexes:keyboardimeoptions')
-    implementation project(path: ':appindexes:base64')
-    implementation project(path: ':appindexes:looknewaddfile2')
-    implementation project(path: ':appindexes:bestinfiniteloop')
-    implementation project(path: ':appindexes:choosephoto')
-    implementation project(path: ':appindexes:contactlist')
-    implementation project(path: ':appindexes:coordinatorlayout')
-    implementation project(path: ':appindexes:coverbaidulangbottom')
-    implementation project(path: ':appindexes:neteasemusicanimation')
+    implementation project(path: ':allappindexes:keyboardimeoptions')
+    implementation project(path: ':allappindexes:base64')
+    implementation project(path: ':allappindexes:looknewaddfile2')
+    implementation project(path: ':allappindexes:bestinfiniteloop')
+    implementation project(path: ':allappindexes:choosephoto')
+    implementation project(path: ':allappindexes:contactlist')
+    implementation project(path: ':allappindexes:coordinatorlayout')
+    implementation project(path: ':allappindexes:coverbaidulangbottom')
+    implementation project(path: ':allappindexes:neteasemusicanimation')
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
