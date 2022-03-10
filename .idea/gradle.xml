@@ -57,9 +57,6 @@
             <option value="$PROJECT_DIR$/study_abroad/HenCoder" />
             <option value="$PROJECT_DIR$/study_abroad/HenCoder/APT" />
             <option value="$PROJECT_DIR$/study_abroad/HenCoder/APT/BindView" />
-            <option value="$PROJECT_DIR$/study_abroad/HenCoder/APT/lib" />
-            <option value="$PROJECT_DIR$/study_abroad/HenCoder/APT/lib-annotations" />
-            <option value="$PROJECT_DIR$/study_abroad/HenCoder/APT/lib-processor" />
             <option value="$PROJECT_DIR$/study_abroad/HenCoder/Animation" />
             <option value="$PROJECT_DIR$/study_abroad/HenCoder/Camera" />
             <option value="$PROJECT_DIR$/study_abroad/HenCoder/CustomViewNestedScroll" />
@@ -74,6 +71,11 @@
             <option value="$PROJECT_DIR$/study_abroad/HenCoder/TagLayout" />
             <option value="$PROJECT_DIR$/study_abroad/HenCoder/Text" />
             <option value="$PROJECT_DIR$/study_abroad/HenCoder/Xformode" />
+            <option value="$PROJECT_DIR$/study_abroad/hencoder" />
+            <option value="$PROJECT_DIR$/study_abroad/hencoder/APT" />
+            <option value="$PROJECT_DIR$/study_abroad/hencoder/APT/lib" />
+            <option value="$PROJECT_DIR$/study_abroad/hencoder/APT/lib-annotations" />
+            <option value="$PROJECT_DIR$/study_abroad/hencoder/APT/lib-processor" />
             <option value="$PROJECT_DIR$/third_part" />
             <option value="$PROJECT_DIR$/third_part/koin" />
             <option value="$PROJECT_DIR$/third_part/moshi" />

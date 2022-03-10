@@ -9,6 +9,7 @@ JNIEXPORT jint JNICALL Java_com_xuebinduan_jni_MainActivity_gainNumber(JNIEnv *e
     // C访问Java中的变量：
 //    jclass cls = (*env)->GetObjectClass(env,obj); //获取java对象的类
     jfieldID fid = (*env)->GetFieldID(env,cls,"number","I"); //获取变量的id值
+    (*env)->SetIntField(env,obj,fid,95); //直接给java中的int赋新值
     jint value = (*env)->GetIntField(env,obj,fid);//获取变量值
     return value;
 }

@@ -28,6 +28,7 @@ include ':binder'
 include ':windowmanager'
 include ':notifycation'
 include ':release_apk'
+//java和c互操作
 include ':jni'
 include ':recyclerview'
 include ':design_pattern'
