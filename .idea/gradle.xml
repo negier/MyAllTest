@@ -26,6 +26,7 @@
             <option value="$PROJECT_DIR$/animation" />
             <option value="$PROJECT_DIR$/binder" />
             <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/consumerproducer" />
             <option value="$PROJECT_DIR$/custom_view" />
             <option value="$PROJECT_DIR$/custom_view/OverScroller" />
             <option value="$PROJECT_DIR$/custom_view/dialog" />
