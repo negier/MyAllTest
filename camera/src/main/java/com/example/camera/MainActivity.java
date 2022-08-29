@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private final int REQUEST_CAMERA_PERMISSION = 1 << 1;
     private Camera mainCamera;
     private SurfaceView surfaceView;
+    boolean isSaved = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
         printSupportedPreviewSizes(supportedPreviewSizes);
         Camera.Size size = findMostPixelSize(supportedPreviewSizes);
         parameters.setPreviewSize(size.width, size.height);
+        Camera.Size previewSize = parameters.getPreviewSize();
+        Log.e("TAG","选中的分辨率是（宽x高）："+previewSize.width+"x"+previewSize.height);
         mainCamera.setParameters(parameters);
 
         SurfaceHolder holder = surfaceView.getHolder();
@@ -80,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 if (data.length > 0) {
                     int previewFormat = mainCamera.getParameters().getPreviewFormat();
                     Log.e("TAG","previewFormat:"+previewFormat);
+                    saveYUVDataOnce(data,getExternalFilesDir("YUV")+"/raw.nv21");
                 }
             }
         });
@@ -175,6 +180,21 @@ public class MainActivity extends AppCompatActivity {
     private void printSupportedPreviewSizes(List<Camera.Size> supportedPreviewSizes) {
         for (Camera.Size size : supportedPreviewSizes) {
             Log.e("TAG", "size:" + size.width + "x" + size.height);
+        }
+    }
+
+    private void saveYUVDataOnce(byte[] data,String filename) {
+        // 保存到本地，后期可以拿出来在YUV Eye中查看
+        if (!isSaved){
+            //save
+            isSaved = true;
+            try {
+                FileOutputStream fileOutputStream = new FileOutputStream(filename);
+                fileOutputStream.write(data);
+                fileOutputStream.close();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
