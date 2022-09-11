@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        android:id="@+id/layout_wrap"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <androidx.camera.view.PreviewView
+            android:id="@+id/viewFinder"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:keepScreenOn="true"
+            android:layout_gravity="center"
+            tools:context=".MainActivity"/>
+
+    <TextView android:text="点击屏幕可预览扫描框内内容" android:gravity="center" android:paddingVertical="10dp"
+              android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom"
+              android:textColor="#f1b853"/>
+
+</FrameLayout>

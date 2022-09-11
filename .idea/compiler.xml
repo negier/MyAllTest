@@ -28,7 +28,10 @@
       <module name="MyAllTest.appindexes.neteasemusicanimation" target="11" />
       <module name="MyAllTest.binder" target="1.8" />
       <module name="MyAllTest.buildSrc" target="1.8" />
+      <module name="MyAllTest.buildSrc.main" target="1.8" />
+      <module name="MyAllTest.buildSrc.test" target="1.8" />
       <module name="MyAllTest.camera" target="1.8" />
+      <module name="MyAllTest.cameraxzxing" target="1.8" />
       <module name="MyAllTest.consumerproducer" target="1.8" />
       <module name="MyAllTest.custom_view.dialog" target="1.8" />
       <module name="MyAllTest.custom_view.drawable" target="1.8" />
