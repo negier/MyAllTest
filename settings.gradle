@@ -78,4 +78,5 @@ include ':allappindexes:coverbaidulangbottom'
 include ':allappindexes:neteasemusicanimation'
 include ':consumerproducer'
 include ':camera'
+// 二维码扫描
 include ':cameraxzxing'
