@@ -33,6 +33,7 @@
       <module name="MyAllTest.camera" target="1.8" />
       <module name="MyAllTest.cameraxzxing" target="1.8" />
       <module name="MyAllTest.consumerproducer" target="1.8" />
+      <module name="MyAllTest.coroutine" target="1.8" />
       <module name="MyAllTest.custom_view.dialog" target="1.8" />
       <module name="MyAllTest.custom_view.drawable" target="1.8" />
       <module name="MyAllTest.custom_view.OverScroller" target="1.8" />
@@ -59,6 +60,7 @@
       <module name="MyAllTest.recyclerview" target="1.8" />
       <module name="MyAllTest.release_apk" target="1.8" />
       <module name="MyAllTest.sensor" target="1.8" />
+      <module name="MyAllTest.study_abroad.coroutine" target="1.8" />
       <module name="MyAllTest.study_abroad.HenCoder.Animation" target="1.8" />
       <module name="MyAllTest.study_abroad.HenCoder.APT.BindView" target="1.8" />
       <module name="MyAllTest.study_abroad.hencoder.APT.lib" target="1.8" />

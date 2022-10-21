@@ -8,7 +8,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.2.0'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10"
         //todo 这里导入的，就可以直接在build.gradle文件中使用
         /*
          * 像那些plugin要使用都是需要classpath先导入的；但当然还有一种方式就是使用buildSrc插件，它是一种约定，它会先编译这个然后打包到buildscript的classpath中。
