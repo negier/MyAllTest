@@ -6,3 +6,13 @@ add_library(
         SHARED
 
         mytest.c)
+
+add_library(
+        mytestdanamic
+
+        SHARED
+
+        mytest_danamic.cpp)
+
+target_link_libraries(mytestdanamic
+        log)

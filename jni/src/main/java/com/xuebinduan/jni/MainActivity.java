@@ -2,8 +2,12 @@ package com.xuebinduan.jni;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+
+import com.xuebinduan.dynamicjni.SecondActivity;
 
 /**
  * JNI:Java Native Interface，Java本地接口。
@@ -26,6 +30,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        findViewById(R.id.button_second).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, SecondActivity.class));
+            }
+        });
 
         Log.e("TAG","神秘数字："+gainNumber());
 
