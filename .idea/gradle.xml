@@ -12,6 +12,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/FFmpeg" />
+            <option value="$PROJECT_DIR$/FFmpeg/FFmpeg5_1_2" />
             <option value="$PROJECT_DIR$/allappindexes" />
             <option value="$PROJECT_DIR$/allappindexes/app" />
             <option value="$PROJECT_DIR$/allappindexes/base64" />

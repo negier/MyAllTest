@@ -81,3 +81,5 @@ include ':consumerproducer'
 include ':camera'
 // 二维码扫描
 include ':cameraxzxing'
+
+include ':FFmpeg:FFmpeg5_1_2'

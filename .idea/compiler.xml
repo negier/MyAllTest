@@ -41,6 +41,8 @@
       <module name="MyAllTest.develop_framework_my_app.app" target="1.8" />
       <module name="MyAllTest.develop_framework_my_app.base" target="1.8" />
       <module name="MyAllTest.draw_signing" target="1.8" />
+      <module name="MyAllTest.FFmpeg.FFmpeg5_1_2" target="1.8" />
+      <module name="MyAllTest.FFmpeg5_1_2" target="1.8" />
       <module name="MyAllTest.gradle_build" target="1.8" />
       <module name="MyAllTest.ime" target="1.8" />
       <module name="MyAllTest.intent" target="1.8" />
