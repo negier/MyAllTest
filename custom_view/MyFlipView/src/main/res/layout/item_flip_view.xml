@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#0e0e0e"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/text_num"
+        android:layout_width="match_parent"
+        android:textSize="220dp"
+        android:includeFontPadding="false"
+        android:gravity="center"
+        tools:text="0"
+        android:textColor="#bababa"
+        android:layout_height="match_parent"/>
+
+</FrameLayout>
