@@ -51,6 +51,7 @@ public class MyCardView extends FrameLayout {
         super.onDraw(canvas);
 
         rectF.set(shadowSize, shadowSize, getWidth()-shadowSize, getHeight()-shadowSize);
+        path.reset();
         path.addRoundRect(rectF, corner, corner, Path.Direction.CW);
         canvas.drawPath(path,shadowPaint);
         canvas.translate(shadowSize,shadowSize);
