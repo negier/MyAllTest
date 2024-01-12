@@ -38,6 +38,7 @@
       <module name="MyAllTest.custom_view.drawable" target="11" />
       <module name="MyAllTest.custom_view.MyFlipView" target="11" />
       <module name="MyAllTest.custom_view.OverScroller" target="11" />
+      <module name="MyAllTest.custom_view.shadowview" target="11" />
       <module name="MyAllTest.design_pattern" target="11" />
       <module name="MyAllTest.develop_framework_my_app.app" target="11" />
       <module name="MyAllTest.develop_framework_my_app.base" target="11" />
