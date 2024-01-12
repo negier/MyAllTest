@@ -39,7 +39,7 @@ public class MyCardView extends FrameLayout {
     public void init(){
         shadowPaint.setColor(Color.WHITE);
         shadowPaint.setStyle(Paint.Style.FILL);
-        setLayerType(LAYER_TYPE_SOFTWARE, null);
+        setLayerType(LAYER_TYPE_HARDWARE, null);
         setWillNotDraw(false);
         shadowPaint.setShadowLayer(shadowSize, 0, 0, Color.parseColor("#3A297269"));
 
