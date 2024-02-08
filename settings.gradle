@@ -36,6 +36,7 @@ include ':io'
 include ':custom_view:dialog'
 include ':custom_view:MyFlipView'
 include ':custom_view:shadowview'
+include ':custom_view:countview'
 
 //我的学习项目（即学习，非原创）
 include ':study_abroad:HenCoder:ScalableImageView'
